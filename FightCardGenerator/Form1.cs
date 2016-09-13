@@ -17,6 +17,10 @@ namespace FightCardGenerator
         {
             InitializeComponent();
 
+            label1.Text = "shit";
+
+
+
             Roster r = new Roster();
 
             Fighter jr = new Fighter("Jr", 240, 240);
@@ -29,7 +33,7 @@ namespace FightCardGenerator
             Fighter shogun = new Fighter("shogun", 205, 205);
             Fighter lyoto = new Fighter("lyoto", 205, 205);
 
-            Fighter gsp = new Fighter("gsp",  170, 170);
+            Fighter gsp = new Fighter("gsp", 170, 170);
             Fighter bj = new Fighter("BJ Penn", 170, 170);
             Fighter serra = new Fighter("serra", 170, 170);
             Fighter diaz = new Fighter("diaz", 170, 170);
@@ -62,6 +66,8 @@ namespace FightCardGenerator
             PrideCard pc1 = new PrideCard(r);
 
 
+
+
             String fighter1 = pc1.getFight1().getFighter1().getName();
             String fighter2 = pc1.getFight1().getFighter2().getName();
 
@@ -86,8 +92,8 @@ namespace FightCardGenerator
 
 
 
-            File.AppendAllText("D:\\log.txt", "\n" +" " + pc1.getFight2().getFighter1().getName() + "\n");
-            File.AppendAllText("D:\\log.txt", "\n" +" " + pc1.getFight2().getFighter1().getWeightClasses() + "\n");
+            File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getName() + "\n");
+            File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getWeightClasses() + "\n");
 
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter2().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter2().getWeightClasses() + "\n");

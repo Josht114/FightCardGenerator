@@ -11,8 +11,8 @@ namespace FightCardGenerator
         Roster cardRoster;
         static Random rnd = new Random();
 
-      //  Fighter a = new Fighter("UnknownA", 0, 265);
-      //  Fighter b = new Fighter("UnknownB", 0, 265);
+     //   Fighter a = new Fighter("UnknownA", 0, 265);
+    //    Fighter b = new Fighter("UnknownB", 0, 265);
 
         Fight fight1 = new Fight();
         Fight fight2 = new Fight();
@@ -25,7 +25,11 @@ namespace FightCardGenerator
         {
             cardRoster = r;
 
-            // NEED TO CHECK THAT IF A FIGHTER IS IN MULTIPLE DIVISION THEY DO NOT GET PUT IN TWO FIGHTS
+            // NEED TO CHECK THAT IF A FIGHTER IS IN MULTIPLE DIVISION THEY DO NOT GET PUT IN TWO FIGHT
+            //
+
+
+      //      creatAllFights();
 
             setFight(cardRoster.getHeavyweights(), fight1);
             setFight(cardRoster.getLightheavyweights(), fight2);
@@ -51,14 +55,12 @@ namespace FightCardGenerator
             }
 
 
-
-
         }
 
-        public void creatAllFights()
-        {
-            // MOVE STUFF FROM ABOVE INTO HERE
-        }
+//        public void creatAllFights()
+  //      {
+
+    //    }
 
 
 
