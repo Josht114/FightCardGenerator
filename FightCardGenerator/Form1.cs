@@ -19,8 +19,11 @@ namespace FightCardGenerator
 
             //  new branch comment
 
+
+
             InitializeComponent();
 
+            cardSelector.SelectedIndex = 0;
 
 
 
@@ -161,7 +164,21 @@ namespace FightCardGenerator
 
         private void generatorButton_Click(object sender, EventArgs e)
         {
-            generatePrideCard();
+
+                if (cardSelector.SelectedItem.ToString() == "Pride")
+                {
+
+                    generatePrideCard();
+
+                errorLabel.Visible = false;
+            }
+
+                else
+            {
+                errorLabel.Visible = true;
+                errorLabel.Text = "To Be Added";
+            }
+
         }
     }
 }
