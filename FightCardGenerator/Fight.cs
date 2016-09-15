@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
-    class Fight
+   public class Fight
     {
         Fighter fighter1;
         Fighter fighter2;

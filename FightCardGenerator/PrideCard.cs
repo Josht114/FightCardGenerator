@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
-    class PrideCard : Card
+    public class PrideCard : Card
     {
         Roster cardRoster;
         static Random rnd = new Random();

@@ -48,6 +48,8 @@
             this.fight3weightlabel = new System.Windows.Forms.Label();
             this.fight4weightlabel = new System.Windows.Forms.Label();
             this.fight5weightlabel = new System.Windows.Forms.Label();
+            this.cardSelector = new System.Windows.Forms.ComboBox();
+            this.generatorButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fighterName1
@@ -265,11 +267,31 @@
             this.fight5weightlabel.Text = "Weight";
             this.fight5weightlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cardSelector
+            // 
+            this.cardSelector.FormattingEnabled = true;
+            this.cardSelector.Location = new System.Drawing.Point(12, 12);
+            this.cardSelector.Name = "cardSelector";
+            this.cardSelector.Size = new System.Drawing.Size(121, 24);
+            this.cardSelector.TabIndex = 20;
+            // 
+            // generatorButton
+            // 
+            this.generatorButton.Location = new System.Drawing.Point(12, 53);
+            this.generatorButton.Name = "generatorButton";
+            this.generatorButton.Size = new System.Drawing.Size(121, 23);
+            this.generatorButton.TabIndex = 21;
+            this.generatorButton.Text = "Generate";
+            this.generatorButton.UseVisualStyleBackColor = true;
+            this.generatorButton.Click += new System.EventHandler(this.generatorButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 492);
+            this.Controls.Add(this.generatorButton);
+            this.Controls.Add(this.cardSelector);
             this.Controls.Add(this.fight5weightlabel);
             this.Controls.Add(this.fight4weightlabel);
             this.Controls.Add(this.fight3weightlabel);
@@ -319,6 +341,8 @@
         private System.Windows.Forms.Label fight3weightlabel;
         private System.Windows.Forms.Label fight4weightlabel;
         private System.Windows.Forms.Label fight5weightlabel;
+        private System.Windows.Forms.ComboBox cardSelector;
+        private System.Windows.Forms.Button generatorButton;
     }
 }
 
