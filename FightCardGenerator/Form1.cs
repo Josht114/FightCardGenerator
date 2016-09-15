@@ -15,11 +15,13 @@ namespace FightCardGenerator
     {
         public Form1()
         {
+
+
+            //  new branch comment
+
             InitializeComponent();
 
-            label1.Text = "shit";
-
-
+            Roster r2 = new Roster();
 
             Roster r = new Roster();
 
@@ -89,8 +91,6 @@ namespace FightCardGenerator
 
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter2().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter2().getWeightClasses() + "\n");
-
-
 
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getWeightClasses() + "\n");
