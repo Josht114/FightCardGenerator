@@ -32,26 +32,40 @@ namespace FightCardGenerator
       //      creatAllFights();
 
             setFight(cardRoster.getHeavyweights(), fight1);
+            fight1.setweight(265);
+
+
             setFight(cardRoster.getLightheavyweights(), fight2);
+            fight2.setweight(205);
+
+
             setFight(cardRoster.getWelterweights(), fight3);
+            fight3.setweight(170);
+
+
             setFight(cardRoster.getLightweights(), fight4);
+            fight4.setweight(155);
 
             int rando = rnd.Next(4);
             if (rando == 1)
             {
                 setFight(cardRoster.getLightweights(), fight5);
+                fight5.setweight(155);
             }
             if (rando == 2)
             {
                 setFight(cardRoster.getWelterweights(), fight5);
+                fight5.setweight(170);
             }
             if (rando == 3)
             {
                 setFight(cardRoster.getLightheavyweights(), fight5);
+                fight5.setweight(205);
             }
             else
             {
                 setFight(cardRoster.getHeavyweights(), fight5);
+                fight5.setweight(265);
             }
 
 

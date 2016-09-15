@@ -116,17 +116,23 @@ namespace FightCardGenerator
 
 
 
-            label1.Text = fighter1;
-            label2.Text = fighter2;
-            label3.Text = fighter3;
-            label4.Text = fighter4;
-            label5.Text = fighter5;
-            label6.Text = fighter6;
-            label7.Text = fighter7;
-            label8.Text = fighter8;
-            label9.Text = fighter9;
-            label10.Text = fighter10;
+            fighterName1.Text = fighter1;
+            fighterName2.Text = fighter2;
+            fighterName3.Text = fighter3;
+            fighterName4.Text = fighter4;
+            FighterName5.Text = fighter5;
+            fighterName6.Text = fighter6;
+            fighterName7.Text = fighter7;
+            fighterName8.Text = fighter8;
+            fighterName9.Text = fighter9;
+            fighterName10.Text = fighter10;
 
+
+            fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
+            fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
+            fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
+            fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
+            fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
         }
     }
 }
