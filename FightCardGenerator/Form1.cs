@@ -15,12 +15,32 @@ namespace FightCardGenerator
     {
         public Form1()
         {
+
+
+            //  new branch comment
+
+
+
             InitializeComponent();
 
-            label1.Text = "shit";
+            cardSelector.SelectedIndex = 0;
 
 
 
+
+
+
+
+
+
+
+
+
+        }
+
+
+        public void generatePrideCard()
+        {
             Roster r = new Roster();
 
             Fighter jr = new Fighter("Jr", 240, 240);
@@ -63,9 +83,11 @@ namespace FightCardGenerator
 
             r.initializeRoster();
 
+
+
+
+
             PrideCard pc1 = new PrideCard(r);
-
-
 
 
             String fighter1 = pc1.getFight1().getFighter1().getName();
@@ -84,13 +106,37 @@ namespace FightCardGenerator
             String fighter10 = pc1.getFight5().getFighter2().getName();
 
 
+
+            fighterName1.Text = fighter1;
+            fighterName2.Text = fighter2;
+            fighterName3.Text = fighter3;
+            fighterName4.Text = fighter4;
+            FighterName5.Text = fighter5;
+            fighterName6.Text = fighter6;
+            fighterName7.Text = fighter7;
+            fighterName8.Text = fighter8;
+            fighterName9.Text = fighter9;
+            fighterName10.Text = fighter10;
+
+
+            fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
+            fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
+            fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
+            fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
+            fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
+        }
+
+
+        private void logFights(PrideCard p)
+        {
+            PrideCard pc1 =p;
+
+
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter1().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter1().getWeightClasses() + "\n");
 
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter2().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter2().getWeightClasses() + "\n");
-
-
 
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight2().getFighter1().getWeightClasses() + "\n");
@@ -116,16 +162,24 @@ namespace FightCardGenerator
 
 
 
-            label1.Text = fighter1;
-            label2.Text = fighter2;
-            label3.Text = fighter3;
-            label4.Text = fighter4;
-            label5.Text = fighter5;
-            label6.Text = fighter6;
-            label7.Text = fighter7;
-            label8.Text = fighter8;
-            label9.Text = fighter9;
-            label10.Text = fighter10;
+        }
+
+        private void generatorButton_Click(object sender, EventArgs e)
+        {
+
+                if (cardSelector.SelectedItem.ToString() == "Pride")
+                {
+
+                    generatePrideCard();
+
+                errorLabel.Visible = false;
+            }
+
+                else
+            {
+                errorLabel.Visible = true;
+                errorLabel.Text = "To Be Added";
+            }
 
         }
     }

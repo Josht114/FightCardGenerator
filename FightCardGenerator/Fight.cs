@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
-    class Fight
+   public class Fight
     {
         Fighter fighter1;
         Fighter fighter2;
+        int weight;
+
+
         public Fight(Fighter a, Fighter b)
         {
             fighter1 = a;
@@ -43,6 +46,57 @@ namespace FightCardGenerator
         public void setFighter2(Fighter b)
         {
             fighter2 = b;
+        }
+
+        public void setweight(int w)
+        {
+            weight = w;
+        }
+
+        public int getWeight()
+        {
+            return weight;
+        }
+
+        public string getStringWeight()
+        {
+            return weight.ToString();
+        }
+
+        public string getStringWeightClass()
+        {
+            if(weight == 265)
+            {
+                return "Heavyweight";
+            }
+            else if (weight == 205)
+            {
+                return "Lightheavyweight";
+            }
+            else if (weight == 185)
+            {
+                return "middleweight";
+            }
+            else if (weight == 170)
+            {
+                return "Welteryweight";
+            }
+            else if (weight == 155)
+            {
+                return "Lightweight";
+            }
+            else if (weight == 145)
+            {
+                return "Featherweight";
+            }
+            else if (weight == 135)
+            {
+                return "Bantamweight";
+            }
+            else
+            {
+                return "Openweight";
+            }
         }
     }
 }

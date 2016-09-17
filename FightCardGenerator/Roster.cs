@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
-    class Roster
+   public class Roster
     {
         List<Fighter> allFighters = new List<Fighter>();
         List<Fighter> heavyweights = new List<Fighter>();
