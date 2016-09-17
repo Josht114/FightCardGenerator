@@ -127,9 +127,11 @@ namespace FightCardGenerator
         }
 
 
-        private void logFights()
+        private void logFights(PrideCard p)
         {
-            /*
+            PrideCard pc1 =p;
+
+
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter1().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight1().getFighter1().getWeightClasses() + "\n");
 
@@ -158,7 +160,7 @@ namespace FightCardGenerator
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight5().getFighter2().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight5().getFighter2().getWeightClasses() + "\n");
 
-*/
+
 
         }
 

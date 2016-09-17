@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,25 +48,32 @@ namespace FightCardGenerator
             fight4.setweight(155);
 
             int rando = rnd.Next(4);
-            if (rando == 1)
+
+            File.AppendAllText("D:\\log.txt", rando.ToString());
+
+            if (rando == 0)
             {
                 setFight(cardRoster.getLightweights(), fight5);
                 fight5.setweight(155);
+                File.AppendAllText("D:\\log.txt", "lightweight");
             }
-            if (rando == 2)
+            if (rando == 1)
             {
                 setFight(cardRoster.getWelterweights(), fight5);
                 fight5.setweight(170);
+                File.AppendAllText("D:\\log.txt", "welterweight");
             }
-            if (rando == 3)
+            if (rando == 2)
             {
                 setFight(cardRoster.getLightheavyweights(), fight5);
                 fight5.setweight(205);
+                File.AppendAllText("D:\\log.txt", "lightheavyweight");
             }
-            else
+            if (rando == 3)
             {
                 setFight(cardRoster.getHeavyweights(), fight5);
                 fight5.setweight(265);
+                File.AppendAllText("D:\\log.txt", "heavyweight");
             }
 
 
