@@ -12,8 +12,6 @@ namespace FightCardGenerator
         Roster cardRoster;
         static Random rnd = new Random();
 
-     //   Fighter a = new Fighter("UnknownA", 0, 265);
-    //    Fighter b = new Fighter("UnknownB", 0, 265);
 
         Fight fight1 = new Fight();
         Fight fight2 = new Fight();

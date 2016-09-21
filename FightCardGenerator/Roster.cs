@@ -72,13 +72,13 @@ namespace FightCardGenerator
 
         }
 
-        public List<Fighter> getBamtamweights()
+        public List<Fighter> getBantamweights()
         {
             return bantamweights;
 
         }
 
-        public List<Fighter> getFeathermweights()
+        public List<Fighter> getFeatherweights()
         {
             return featherweights;
 
