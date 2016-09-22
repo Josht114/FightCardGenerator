@@ -16,8 +16,6 @@ namespace FightCardGenerator
         public Form1()
         {
 
-            //  new branch comment
-
 
             InitializeComponent();
 
