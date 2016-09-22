@@ -95,7 +95,7 @@ namespace FightCardGenerator
             }
             else
             {
-                return "Openweight";
+                return "Catchweight";
             }
         }
     }
