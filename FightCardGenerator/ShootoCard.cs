@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
-    class ShootoCard : Card
+  public class ShootoCard : Card
     {
         Roster cardRoster;
         static Random rnd = new Random();

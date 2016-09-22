@@ -200,22 +200,54 @@ namespace FightCardGenerator
 
             ShootoCard pc1 = new ShootoCard(r);
 
+            /*
+                        String fighter1 = "N/A";
+                        setLabels(pc1, fighter1);
 
-            String fighter1 = pc1.getFight1().getFighter1().getName();
-            String fighter2 = pc1.getFight1().getFighter2().getName();
+                        String fighter2 = "N/A";
+                        setLabels(pc1, fighter2);
 
-            String fighter3 = pc1.getFight2().getFighter1().getName();
-            String fighter4 = pc1.getFight2().getFighter2().getName();
+                        String fighter3 = "N/A";
+                        setLabels(pc1, fighter3);
 
-            String fighter5 = pc1.getFight3().getFighter1().getName();
-            String fighter6 = pc1.getFight3().getFighter2().getName();
+                        String fighter4 = "N/A";
+                        setLabels(pc1, fighter4);
 
-            String fighter7 = pc1.getFight4().getFighter1().getName();
-            String fighter8 = pc1.getFight4().getFighter2().getName();
+                        String fighter5 = "N/A";
+                        setLabels(pc1, fighter5);
 
-            String fighter9 = pc1.getFight5().getFighter1().getName();
-            String fighter10 = pc1.getFight5().getFighter2().getName();
+                        String fighter6 = "N/A";
+                        setLabels(pc1, fighter6);
 
+                        String fighter7 = "N/A";
+                        setLabels(pc1, fighter7);
+
+                        String fighter8 = "N/A";
+                        setLabels(pc1, fighter8);
+
+                        String fighter9 = "N/A";
+                        setLabels(pc1, fighter9);
+
+                        String fighter10 = "N/A";
+                        setLabels(pc1, fighter10);
+
+
+                        */
+
+                        String fighter1 = pc1.getFight1().getFighter1().getName();
+                        String fighter2 = pc1.getFight1().getFighter2().getName();
+
+                        String fighter3 = pc1.getFight2().getFighter1().getName();
+                        String fighter4 = pc1.getFight2().getFighter2().getName();
+
+                        String fighter5 = pc1.getFight3().getFighter1().getName();
+                        String fighter6 = pc1.getFight3().getFighter2().getName();
+
+                        String fighter7 = pc1.getFight4().getFighter1().getName();
+                        String fighter8 = pc1.getFight4().getFighter2().getName();
+
+                        String fighter9 = pc1.getFight5().getFighter1().getName();
+                        String fighter10 = pc1.getFight5().getFighter2().getName();
 
 
             fighterName1.Text = fighter1;
@@ -235,6 +267,26 @@ namespace FightCardGenerator
             fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
             fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
             fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
+        }
+
+
+
+
+        public void setLabels(ShootoCard c, string fighter)
+        {
+            String name = c.getFight1().getFighter1().getName();
+
+
+            if (name.Equals(null) == false)
+            {
+                fighter = c.getFight1().getFighter1().getName();
+            }
+            else
+            {
+                fighter = "N/A";
+
+            }
+
         }
 
 
