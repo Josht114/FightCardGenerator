@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FightCardGenerator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,11 @@ namespace FightCardGenerator
 {
    public class Fight
     {
-        Fighter fighter1;
-        Fighter fighter2;
+        Fighter fighter1 = new Fighter("N/A", 0, 0);
+        Fighter fighter2 = new Fighter("N/A", 0, 0);
         int weight;
+
+
 
 
         public Fight(Fighter a, Fighter b)

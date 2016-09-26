@@ -40,10 +40,10 @@ namespace FightCardGenerator
             Fighter serra = new Fighter("serra", 170, 170);
             Fighter diaz = new Fighter("diaz", 170, 170);
 
-           Fighter torres = new Fighter("torres", 155, 155);
-            Fighter edgar = new Fighter("edgar", 155, 155);
-           Fighter pettis = new Fighter("pettis", 155, 155);
-           Fighter aldo = new Fighter("aldo", 155, 155);
+  //         Fighter torres = new Fighter("torres", 155, 155);
+  //          Fighter edgar = new Fighter("edgar", 155, 155);
+   //        Fighter pettis = new Fighter("pettis", 155, 155);
+    //       Fighter aldo = new Fighter("aldo", 155, 155);
 
             r.addFighter(jr);
             r.addFighter(cain);
@@ -57,10 +57,10 @@ namespace FightCardGenerator
             r.addFighter(bj);
             r.addFighter(serra);
             r.addFighter(diaz);
-           r.addFighter(torres);
-          r.addFighter(edgar);
-            r.addFighter(pettis);
-            r.addFighter(aldo);
+  //         r.addFighter(torres);
+  //        r.addFighter(edgar);
+  //          r.addFighter(pettis);
+   //         r.addFighter(aldo);
 
             r.initializeRoster();
 
