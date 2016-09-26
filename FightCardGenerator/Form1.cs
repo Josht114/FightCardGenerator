@@ -15,12 +15,9 @@ namespace FightCardGenerator
     {
         public Form1()
         {
-
-
             InitializeComponent();
 
             cardSelector.SelectedIndex = 0;
-
         }
 
 
@@ -43,11 +40,10 @@ namespace FightCardGenerator
             Fighter serra = new Fighter("serra", 170, 170);
             Fighter diaz = new Fighter("diaz", 170, 170);
 
-
-            Fighter torres = new Fighter("torres", 155, 155);
+           Fighter torres = new Fighter("torres", 155, 155);
             Fighter edgar = new Fighter("edgar", 155, 155);
-            Fighter pettis = new Fighter("pettis", 155, 155);
-            Fighter aldo = new Fighter("aldo", 155, 155);
+           Fighter pettis = new Fighter("pettis", 155, 155);
+           Fighter aldo = new Fighter("aldo", 155, 155);
 
             r.addFighter(jr);
             r.addFighter(cain);
@@ -61,19 +57,14 @@ namespace FightCardGenerator
             r.addFighter(bj);
             r.addFighter(serra);
             r.addFighter(diaz);
-            r.addFighter(torres);
-            r.addFighter(edgar);
+           r.addFighter(torres);
+          r.addFighter(edgar);
             r.addFighter(pettis);
             r.addFighter(aldo);
 
             r.initializeRoster();
 
-
-
-
-
              PrideCard pc1 = new PrideCard(r);
-
 
             String fighter1 = pc1.getFight1().getFighter1().getName();
             String fighter2 = pc1.getFight1().getFighter2().getName();
@@ -90,8 +81,6 @@ namespace FightCardGenerator
             String fighter9 = pc1.getFight5().getFighter1().getName();
             String fighter10 = pc1.getFight5().getFighter2().getName();
 
-
-
             fighterName1.Text = fighter1;
             fighterName2.Text = fighter2;
             fighterName3.Text = fighter3;
@@ -102,7 +91,6 @@ namespace FightCardGenerator
             fighterName8.Text = fighter8;
             fighterName9.Text = fighter9;
             fighterName10.Text = fighter10;
-
 
             fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
             fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
@@ -137,7 +125,6 @@ namespace FightCardGenerator
             Fighter serra = new Fighter("serra", 170, 170);
             Fighter diaz = new Fighter("diaz", 170, 170);
 
-
             Fighter cerrone = new Fighter("Cerrone", 155, 155);
             Fighter edgar = new Fighter("edgar", 155, 155);
             Fighter pettis = new Fighter("pettis", 155, 155);
@@ -152,8 +139,6 @@ namespace FightCardGenerator
             Fighter kid = new Fighter("Kid", 135, 135);
             Fighter torres = new Fighter("torres", 135, 135);
             Fighter baro = new Fighter("baro", 135, 135);
-
-
 
             r.addFighter(jr);
             r.addFighter(cain);
@@ -191,10 +176,6 @@ namespace FightCardGenerator
             r.addFighter(baro);
 
             r.initializeRoster();
-
-
-
-
 
             ShootoCard pc1 = new ShootoCard(r);
 
@@ -267,9 +248,6 @@ namespace FightCardGenerator
             fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
         }
 
-
-
-
         public void setLabels(ShootoCard c, string fighter)
         {
             String name = c.getFight1().getFighter1().getName();
@@ -321,8 +299,6 @@ namespace FightCardGenerator
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight5().getFighter2().getName() + "\n");
             File.AppendAllText("D:\\log.txt", "\n" + " " + pc1.getFight5().getFighter2().getWeightClasses() + "\n");
 
-
-
         }
 
         private void generatorButton_Click(object sender, EventArgs e)
@@ -330,25 +306,22 @@ namespace FightCardGenerator
 
                 if (cardSelector.SelectedItem.ToString() == "Pride")
                 {
-
                     generatePrideCard();
 
                 errorLabel.Visible = false;
-            }
+                }
                 else if (cardSelector.SelectedItem.ToString() == "Shooto")
-            {
+                {
 
                 generateShootoCard();
 
                 errorLabel.Visible = false;
-            }
-
-
-            else
-            {
+                }
+                else
+                {
                 errorLabel.Visible = true;
                 errorLabel.Text = "To Be Added";
-            }
+                }
 
         }
     }
