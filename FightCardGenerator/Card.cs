@@ -13,13 +13,10 @@ namespace FightCardGenerator
 
         List<Fighter> bookedFighters = new List<Fighter>();
 
-
         public Card(Roster r)
         {
             cardRoster = r;
-
         }
-
 
         public void setFight(List<Fighter> f, Fight f1)
         {
@@ -38,7 +35,6 @@ namespace FightCardGenerator
                 f1.setFighter1(g);
                 bookedFighters.Add(g);
                 f.Remove(g);
-
 
 
                 int rando2 = rnd.Next(f.Count);

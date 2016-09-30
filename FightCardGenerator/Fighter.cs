@@ -26,7 +26,6 @@ namespace FightCardGenerator
             name =  FighterName;
             upperWeight = upWeight;
             lowerWeight = lowWeight;
-
             calcWeightClasses();
         }
 

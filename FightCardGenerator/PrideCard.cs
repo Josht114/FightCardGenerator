@@ -24,12 +24,6 @@ namespace FightCardGenerator
         {
             cardRoster = r;
 
-            // NEED TO CHECK THAT IF A FIGHTER IS IN MULTIPLE DIVISION THEY DO NOT GET PUT IN TWO FIGHT
-            //
-
-
-      //      creatAllFights();
-
             setFight(cardRoster.getHeavyweights(), fight1);
             fight1.setweight(265);
 
@@ -76,12 +70,6 @@ namespace FightCardGenerator
 
 
         }
-
-//        public void creatAllFights()
-  //      {
-
-    //    }
-
 
 
         public Fight getFight1()

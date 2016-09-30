@@ -23,17 +23,12 @@ namespace FightCardGenerator
         {
             cardRoster = r;
 
-
-
-
-
             int i = 0;
 
             while (i < 7)
             {
 
                 int rando = rnd.Next(7);
-
 
                 while (bookedWeights.Contains(rando))
                 {
@@ -44,21 +39,12 @@ namespace FightCardGenerator
                 i++;
             }
 
-
-
-
             setupFight(fight1, bookedWeights[0]);
             setupFight(fight2, bookedWeights[1]);
             setupFight(fight3, bookedWeights[2]);
             setupFight(fight4, bookedWeights[3]);
             setupFight(fight5, bookedWeights[4]);
-
-
-
         }
-
-
-
 
         public void setupFight(Fight f, int weight)
         {
@@ -68,7 +54,6 @@ namespace FightCardGenerator
                 f.setweight(265);
                 File.AppendAllText("D:\\log.txt", "heavyweight");
             }
-
             if (weight == 1)
             {
                 setFight(cardRoster.getLightheavyweights(), f);
@@ -105,10 +90,7 @@ namespace FightCardGenerator
                 f.setweight(135);
                 File.AppendAllText("D:\\log.txt", "Bantamweight");
             }
-
-
         }
-
 
 
         public Fight getFight1()
@@ -132,10 +114,6 @@ namespace FightCardGenerator
         {
             return fight5;
         }
-
-
-
-
 
     }
 }

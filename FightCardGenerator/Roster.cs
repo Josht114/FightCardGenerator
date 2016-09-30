@@ -18,17 +18,10 @@ namespace FightCardGenerator
         List<Fighter> bantamweights = new List<Fighter>();
 
 
-
         public void addFighter(Fighter f)
         {
             allFighters.Add(f);
-
-            // SHOULD EMPTY LISTS HERE BEFORE RE-ADDING ALL AGAIN
-
-         //   initializeRoster();
-
         }
-
 
         public void initializeRoster()
         {
@@ -75,43 +68,36 @@ namespace FightCardGenerator
         public List<Fighter> getBantamweights()
         {
             return bantamweights;
-
         }
 
         public List<Fighter> getFeatherweights()
         {
             return featherweights;
-
         }
 
         public List<Fighter> getLightweights()
         {
             return lightweights;
-
         }
 
         public List<Fighter> getWelterweights()
         {
             return welterweights;
-
         }
 
         public List<Fighter> getMiddleweights()
         {
             return middleweights;
-
         }
 
         public List<Fighter> getLightheavyweights()
         {
             return lightheavyweights;
-
         }
 
         public List<Fighter> getHeavyweights()
         {
             return heavyweights;
-
         }
 
     }

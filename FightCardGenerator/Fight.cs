@@ -13,22 +13,15 @@ namespace FightCardGenerator
         Fighter fighter2 = new Fighter("N/A", 0, 0);
         int weight;
 
-
-        // comment for test pull
-
-
         public Fight(Fighter a, Fighter b)
         {
             fighter1 = a;
             fighter2 = b;
-
         }
 
         public Fight()
         {
-
         }
-
 
         public Fighter getFighter1()
         {
@@ -44,7 +37,6 @@ namespace FightCardGenerator
         public void setFighter1(Fighter a)
         {
             fighter1 = a;
-
         }
 
         public void setFighter2(Fighter b)
