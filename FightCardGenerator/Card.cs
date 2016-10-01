@@ -20,7 +20,7 @@ namespace FightCardGenerator
 
         public void setFight(List<Fighter> f, Fight f1)
         {
-            if (f.Count > 0)
+            if (f.Count > 1)
             {
 
                 int rando = rnd.Next(f.Count);

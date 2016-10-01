@@ -100,5 +100,50 @@ namespace FightCardGenerator
             return heavyweights;
         }
 
+
+        public String stringAllFighters()
+        {
+            String allNames = "";
+
+            foreach(Fighter f in allFighters)
+            {
+                allNames = allNames + " " + f.getName() + f.getWeightClasses() + " \n";
+            }
+
+            return allNames;
+
+        }
+
+
+
+        public String stringAllLightweights()
+        {
+            String allNames = "";
+
+            foreach (Fighter f in lightweights)
+            {
+                allNames = allNames + " " + f.getName() + " ";
+            }
+
+            return allNames;
+
+        }
+
+
+        public String stringAllFeatherweights()
+        {
+            String allNames = "";
+
+            foreach (Fighter f in featherweights)
+            {
+                allNames = allNames + " " + f.getName() + " ";
+            }
+
+            return allNames;
+
+        }
+
+
+
     }
 }

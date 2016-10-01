@@ -52,6 +52,7 @@
             this.generatorButton = new System.Windows.Forms.Button();
             this.selectorLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.testLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fighterName1
@@ -315,11 +316,21 @@
             this.errorLabel.Text = "Error";
             this.errorLabel.Visible = false;
             // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Location = new System.Drawing.Point(440, 54);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(66, 17);
+            this.testLabel.TabIndex = 24;
+            this.testLabel.Text = "testLabel";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 648);
+            this.Controls.Add(this.testLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.selectorLabel);
             this.Controls.Add(this.generatorButton);
@@ -377,6 +388,7 @@
         private System.Windows.Forms.Button generatorButton;
         private System.Windows.Forms.Label selectorLabel;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label testLabel;
     }
 }
 

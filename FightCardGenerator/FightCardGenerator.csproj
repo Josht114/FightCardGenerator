@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="DataReader.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Fighter.cs" />
     <Compile Include="Form1.cs">

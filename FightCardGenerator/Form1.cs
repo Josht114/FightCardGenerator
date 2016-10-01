@@ -25,6 +25,9 @@ namespace FightCardGenerator
         {
             Roster r = new Roster();
 
+
+/*
+
             Fighter jr = new Fighter("Jr", 240, 240);
             Fighter cain = new Fighter("Cain", 245, 245);
             Fighter fedor = new Fighter("Fedor", 225, 235);
@@ -40,10 +43,10 @@ namespace FightCardGenerator
             Fighter serra = new Fighter("serra", 170, 170);
             Fighter diaz = new Fighter("diaz", 170, 170);
 
-  //         Fighter torres = new Fighter("torres", 155, 155);
-  //          Fighter edgar = new Fighter("edgar", 155, 155);
-   //        Fighter pettis = new Fighter("pettis", 155, 155);
-    //       Fighter aldo = new Fighter("aldo", 155, 155);
+           Fighter torres = new Fighter("torres", 155, 155);
+            Fighter edgar = new Fighter("edgar", 155, 155);
+           Fighter pettis = new Fighter("pettis", 155, 155);
+           Fighter aldo = new Fighter("aldo", 155, 155);
 
             r.addFighter(jr);
             r.addFighter(cain);
@@ -57,10 +60,10 @@ namespace FightCardGenerator
             r.addFighter(bj);
             r.addFighter(serra);
             r.addFighter(diaz);
-  //         r.addFighter(torres);
-  //        r.addFighter(edgar);
-  //          r.addFighter(pettis);
-   //         r.addFighter(aldo);
+           r.addFighter(torres);
+          r.addFighter(edgar);
+          r.addFighter(pettis);
+           r.addFighter(aldo);
 
             r.initializeRoster();
 
@@ -97,6 +100,72 @@ namespace FightCardGenerator
             fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
             fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
             fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
+
+*/
+
+            DataReader d = new DataReader("d:\fighterData.csv");
+
+            List<String> data = new List<String>();
+
+            data = d.getDataList();
+
+            List<Fighter> fighterz = new List<Fighter>();
+            fighterz = createFighters(data);
+
+            foreach(Fighter f in fighterz)
+            {
+                r.addFighter(f);
+            }
+
+
+
+
+            //need to get the array of fighter back from createFighters loop through it and add to roster then inizialize the roster then create the pride card
+
+            r.initializeRoster();
+
+            PrideCard pc1 = new PrideCard(r);
+
+
+
+            testLabel.Text = r.stringAllFighters();
+       //     testLabel.Text = r.stringAllLightweights();
+          //  testLabel.Text = r.stringAllFeatherweights();
+
+            String fighter1 = pc1.getFight1().getFighter1().getName();
+            String fighter2 = pc1.getFight1().getFighter2().getName();
+
+            String fighter3 = pc1.getFight2().getFighter1().getName();
+            String fighter4 = pc1.getFight2().getFighter2().getName();
+
+            String fighter5 = pc1.getFight3().getFighter1().getName();
+            String fighter6 = pc1.getFight3().getFighter2().getName();
+
+            String fighter7 = pc1.getFight4().getFighter1().getName();
+            String fighter8 = pc1.getFight4().getFighter2().getName();
+
+            String fighter9 = pc1.getFight5().getFighter1().getName();
+            String fighter10 = pc1.getFight5().getFighter2().getName();
+
+            fighterName1.Text = fighter1;
+            fighterName2.Text = fighter2;
+            fighterName3.Text = fighter3;
+            fighterName4.Text = fighter4;
+            FighterName5.Text = fighter5;
+            fighterName6.Text = fighter6;
+            fighterName7.Text = fighter7;
+            fighterName8.Text = fighter8;
+            fighterName9.Text = fighter9;
+            fighterName10.Text = fighter10;
+
+            fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
+            fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
+            fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
+            fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
+            fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
+
+
+
         }
 
 
@@ -247,6 +316,45 @@ namespace FightCardGenerator
             fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
             fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
         }
+
+
+
+        public List<Fighter> createFighters(List<String> s)
+        {
+            //need to add loads of stuff for incrrectly formatted csv
+
+            List<Fighter> fighters = new List<Fighter>();
+
+            int name = 0;
+            int low = 1;
+            int high = 2;
+
+            int i = 0;
+
+            while (i < (s.Count/3))
+            {
+
+                String hi = s[high];
+                String lo = s[low];
+
+                int h = int.Parse(hi);
+                int l = int.Parse(lo);
+
+                Fighter fighter = new Fighter(s[name], h, l);
+
+
+
+                fighters.Add(fighter);
+
+                name = name +3;
+                low = low +3;
+                high = high +3;
+                i++;
+            }
+
+            return fighters;
+        }
+
 
         public void setLabels(ShootoCard c, string fighter)
         {
