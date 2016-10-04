@@ -13,6 +13,8 @@ namespace FightCardGenerator
 {
     public partial class Form1 : Form
     {
+        String dataLocation = @"d:\\fighterData.csv";
+
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace FightCardGenerator
 
 
 
-            DataReader d = new DataReader("d:\fighterData.csv");
+            DataReader d = new DataReader(dataLocation);
 
             List<String> data = new List<String>();
 
@@ -64,7 +66,7 @@ namespace FightCardGenerator
 
 
 
-            DataReader d = new DataReader("d:\fighterData.csv");
+            DataReader d = new DataReader(dataLocation);
 
             List<String> data = new List<String>();
 
@@ -102,31 +104,40 @@ namespace FightCardGenerator
             List<Fighter> fighters = new List<Fighter>();
 
             int name = 0;
-            int low = 1;
-            int high = 2;
+            int high = 1;
+            int low = 2;
+
 
             int i = 0;
+            int num1 = 0;
 
-            while (i < (s.Count/3))
+            while (i < (s.Count / 3))
             {
-
+                // if tyoe if not correct skip this loop
                 String hi = s[high];
                 String lo = s[low];
+
+                Boolean hiNum = int.TryParse(hi, out num1);
+                Boolean loNum = int.TryParse(lo, out num1);
+
+                if (hiNum == true && loNum == true)
+                {
 
                 int h = int.Parse(hi);
                 int l = int.Parse(lo);
 
                 Fighter fighter = new Fighter(s[name], h, l);
 
-
-
                 fighters.Add(fighter);
 
-                name = name +3;
-                low = low +3;
-                high = high +3;
-                i++;
             }
+                name = name + 3;
+                low = low + 3;
+                high = high + 3;
+                i++;
+
+            }
+
 
             return fighters;
         }

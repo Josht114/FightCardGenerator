@@ -20,7 +20,7 @@ namespace FightCardGenerator
         public DataReader(String file)
         {
             dataPath = file;
-            String[] input = File.ReadAllText(@"d:\\fighterData.csv").Split(new string[] { "\r\n", "\n", "," }, StringSplitOptions.None);
+            String[] input = File.ReadAllText(file).Split(new string[] { "\r\n", "\n", "," }, StringSplitOptions.RemoveEmptyEntries);
 
 
 
