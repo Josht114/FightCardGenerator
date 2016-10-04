@@ -13,7 +13,7 @@ namespace FightCardGenerator
 {
     public partial class Form1 : Form
     {
-        String dataLocation = @"d:\\fighterData.csv";
+        String dataLocation = @"d:\\fighterData2.csv";
 
         public Form1()
         {

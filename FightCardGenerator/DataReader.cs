@@ -15,22 +15,19 @@ namespace FightCardGenerator
 
         List<String> values = new List<String>();
 
-
+        String[] input = new String[0];
 
         public DataReader(String file)
         {
             dataPath = file;
-            String[] input = File.ReadAllText(file).Split(new string[] { "\r\n", "\n", "," }, StringSplitOptions.RemoveEmptyEntries);
 
+            if (File.Exists(file))
+            {
 
+                input = File.ReadAllText(file).Split(new string[] { "\r\n", "\n", "," }, StringSplitOptions.RemoveEmptyEntries);
 
+            }
 
-
-
-
-
-
-            // .Split(',');
 
             foreach (String data in input)
             {
