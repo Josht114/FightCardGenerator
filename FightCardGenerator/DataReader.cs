@@ -21,7 +21,7 @@ namespace FightCardGenerator
         {
             dataPath = file;
 
-            if (File.Exists(file))
+            if (File.Exists(file) && dataPath.EndsWith(".csv"))
             {
 
                 input = File.ReadAllText(file).Split(new string[] { "\r\n", "\n", "," }, StringSplitOptions.RemoveEmptyEntries);
