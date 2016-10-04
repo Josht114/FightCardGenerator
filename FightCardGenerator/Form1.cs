@@ -15,11 +15,14 @@ namespace FightCardGenerator
     {
         String dataLocation = @"d:\\fighterData2.csv";
 
+
         public Form1()
         {
             InitializeComponent();
 
             cardSelector.SelectedIndex = 0;
+
+            dataLocationLabel.Text = dataLocation;
         }
 
 
@@ -190,6 +193,8 @@ namespace FightCardGenerator
             fighterName9.Text = fighter9;
             fighterName10.Text = fighter10;
 
+
+
             fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
             fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
             fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
@@ -293,6 +298,18 @@ namespace FightCardGenerator
                 errorLabel.Text = "To Be Added";
                 }
 
+        }
+
+        private void dataSelectButton_Click(object sender, EventArgs e)
+        {
+            // Show the Open File dialog. If the user clicks OK, load the
+            // file that the user chose.
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                dataLocation = openFileDialog1.FileName;
+
+                dataLocationLabel.Text = dataLocation;
+            }
         }
     }
 }
