@@ -13,11 +13,16 @@ namespace FightCardGenerator
 {
     public partial class Form1 : Form
     {
+        String dataLocation = @"d:\\fighterData2.csv";
+
+
         public Form1()
         {
             InitializeComponent();
 
             cardSelector.SelectedIndex = 0;
+
+            dataLocationLabel.Text = dataLocation;
         }
 
 
@@ -25,47 +30,182 @@ namespace FightCardGenerator
         {
             Roster r = new Roster();
 
-            Fighter jr = new Fighter("Jr", 240, 240);
-            Fighter cain = new Fighter("Cain", 245, 245);
-            Fighter fedor = new Fighter("Fedor", 225, 235);
-            Fighter reem = new Fighter("Reem", 225, 235);
 
-            Fighter chuck = new Fighter("chuck", 205, 205);
-            Fighter forest = new Fighter("forest", 205, 205);
-            Fighter shogun = new Fighter("shogun", 205, 205);
-            Fighter lyoto = new Fighter("lyoto", 205, 205);
 
-            Fighter gsp = new Fighter("gsp", 170, 170);
-            Fighter bj = new Fighter("BJ Penn", 170, 170);
-            Fighter serra = new Fighter("serra", 170, 170);
-            Fighter diaz = new Fighter("diaz", 170, 170);
 
-  //         Fighter torres = new Fighter("torres", 155, 155);
-  //          Fighter edgar = new Fighter("edgar", 155, 155);
-   //        Fighter pettis = new Fighter("pettis", 155, 155);
-    //       Fighter aldo = new Fighter("aldo", 155, 155);
+            DataReader d = new DataReader(dataLocation);
 
-            r.addFighter(jr);
-            r.addFighter(cain);
-            r.addFighter(fedor);
-            r.addFighter(reem);
-            r.addFighter(chuck);
-            r.addFighter(forest);
-            r.addFighter(shogun);
-            r.addFighter(lyoto);
-            r.addFighter(gsp);
-            r.addFighter(bj);
-            r.addFighter(serra);
-            r.addFighter(diaz);
-  //         r.addFighter(torres);
-  //        r.addFighter(edgar);
-  //          r.addFighter(pettis);
-   //         r.addFighter(aldo);
+            List<String> data = new List<String>();
+
+            data = d.getDataList();
+
+            List<Fighter> fighterz = new List<Fighter>();
+            fighterz = createFighters(data);
+
+            foreach(Fighter f in fighterz)
+            {
+                r.addFighter(f);
+            }
+
 
             r.initializeRoster();
 
-             PrideCard pc1 = new PrideCard(r);
+            PrideCard pc1 = new PrideCard(r);
 
+
+
+            testLabel.Text = r.stringAllFighters();
+
+
+            setPrideLabels(pc1);
+
+
+
+        }
+
+        public void generateShootoCard()
+        {
+            Roster r = new Roster();
+
+
+
+            DataReader d = new DataReader(dataLocation);
+
+            List<String> data = new List<String>();
+
+            data = d.getDataList();
+
+            List<Fighter> fighterz = new List<Fighter>();
+            fighterz = createFighters(data);
+
+            foreach (Fighter f in fighterz)
+            {
+                r.addFighter(f);
+            }
+
+
+            r.initializeRoster();
+
+            ShootoCard sc1 = new ShootoCard(r);
+
+
+
+            testLabel.Text = r.stringAllFighters();
+
+
+            setShootoLabels(sc1);
+        }
+
+
+
+
+
+        public List<Fighter> createFighters(List<String> s)
+        {
+            //need to add loads of stuff for incrrectly formatted csv
+
+            List<Fighter> fighters = new List<Fighter>();
+
+            int name = 0;
+            int high = 1;
+            int low = 2;
+
+
+            int i = 0;
+            int num1 = 0;
+
+            while (i < (s.Count / 3))
+            {
+                // if tyoe if not correct skip this loop
+                String hi = s[high];
+                String lo = s[low];
+
+                Boolean hiNum = int.TryParse(hi, out num1);
+                Boolean loNum = int.TryParse(lo, out num1);
+
+                if (hiNum == true && loNum == true)
+                {
+
+                int h = int.Parse(hi);
+                int l = int.Parse(lo);
+
+                Fighter fighter = new Fighter(s[name], h, l);
+
+                fighters.Add(fighter);
+
+            }
+                name = name + 3;
+                low = low + 3;
+                high = high + 3;
+                i++;
+
+            }
+
+
+            return fighters;
+        }
+
+
+        public void setLabels(ShootoCard c, string fighter)
+        {
+            String name = c.getFight1().getFighter1().getName();
+
+
+            if (name.Equals(null) == false)
+            {
+                fighter = c.getFight1().getFighter1().getName();
+            }
+            else
+            {
+                fighter = "N/A";
+
+            }
+
+        }
+
+
+
+        public void setPrideLabels(PrideCard pc1)
+        {
+            String fighter1 = pc1.getFight1().getFighter1().getName();
+            String fighter2 = pc1.getFight1().getFighter2().getName();
+
+            String fighter3 = pc1.getFight2().getFighter1().getName();
+            String fighter4 = pc1.getFight2().getFighter2().getName();
+
+            String fighter5 = pc1.getFight3().getFighter1().getName();
+            String fighter6 = pc1.getFight3().getFighter2().getName();
+
+            String fighter7 = pc1.getFight4().getFighter1().getName();
+            String fighter8 = pc1.getFight4().getFighter2().getName();
+
+            String fighter9 = pc1.getFight5().getFighter1().getName();
+            String fighter10 = pc1.getFight5().getFighter2().getName();
+
+            fighterName1.Text = fighter1;
+            fighterName2.Text = fighter2;
+            fighterName3.Text = fighter3;
+            fighterName4.Text = fighter4;
+            FighterName5.Text = fighter5;
+            fighterName6.Text = fighter6;
+            fighterName7.Text = fighter7;
+            fighterName8.Text = fighter8;
+            fighterName9.Text = fighter9;
+            fighterName10.Text = fighter10;
+
+
+
+            fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
+            fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
+            fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
+            fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
+            fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
+
+        }
+
+
+        public void setShootoLabels(ShootoCard pc1)
+        {
             String fighter1 = pc1.getFight1().getFighter1().getName();
             String fighter2 = pc1.getFight1().getFighter2().getName();
 
@@ -97,171 +237,6 @@ namespace FightCardGenerator
             fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
             fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
             fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
-        }
-
-
-
-        public void generateShootoCard()
-        {
-            Roster r = new Roster();
-
-            Fighter jr = new Fighter("Jr", 240, 240);
-            Fighter cain = new Fighter("Cain", 245, 245);
-            Fighter fedor = new Fighter("Fedor", 225, 235);
-            Fighter reem = new Fighter("Reem", 225, 235);
-
-            Fighter chuck = new Fighter("chuck", 205, 205);
-            Fighter forest = new Fighter("forest", 205, 205);
-            Fighter shogun = new Fighter("shogun", 205, 205);
-            Fighter lyoto = new Fighter("lyoto", 205, 205);
-
-            Fighter bisping = new Fighter("Bisping", 185, 185);
-            Fighter jacare = new Fighter("Jacare", 185, 185);
-            Fighter weidman = new Fighter("Weidman", 185, 185);
-            Fighter franklin = new Fighter("Franklin", 185, 185);
-
-            Fighter gsp = new Fighter("gsp", 170, 170);
-            Fighter bj = new Fighter("BJ Penn", 170, 170);
-            Fighter serra = new Fighter("serra", 170, 170);
-            Fighter diaz = new Fighter("diaz", 170, 170);
-
-            Fighter cerrone = new Fighter("Cerrone", 155, 155);
-            Fighter edgar = new Fighter("edgar", 155, 155);
-            Fighter pettis = new Fighter("pettis", 155, 155);
-            Fighter aldo = new Fighter("aldo", 155, 155);
-
-            Fighter faber = new Fighter("Faber", 145, 145);
-            Fighter lamas = new Fighter("Lamas", 145, 145);
-            Fighter blanco = new Fighter("Blanco", 145, 145);
-            Fighter pulver = new Fighter("Pulver", 145, 145);
-
-            Fighter cruz = new Fighter("Cruz", 135, 135);
-            Fighter kid = new Fighter("Kid", 135, 135);
-            Fighter torres = new Fighter("torres", 135, 135);
-            Fighter baro = new Fighter("baro", 135, 135);
-
-            r.addFighter(jr);
-            r.addFighter(cain);
-            r.addFighter(fedor);
-            r.addFighter(reem);
-
-            r.addFighter(chuck);
-            r.addFighter(forest);
-            r.addFighter(shogun);
-            r.addFighter(lyoto);
-
-            r.addFighter(bisping);
-            r.addFighter(jacare);
-            r.addFighter(weidman);
-            r.addFighter(franklin);
-
-            r.addFighter(gsp);
-            r.addFighter(bj);
-            r.addFighter(serra);
-            r.addFighter(diaz);
-
-            r.addFighter(cerrone);
-            r.addFighter(edgar);
-            r.addFighter(pettis);
-            r.addFighter(aldo);
-
-            r.addFighter(faber);
-            r.addFighter(lamas);
-            r.addFighter(blanco);
-            r.addFighter(pulver);
-
-            r.addFighter(cruz);
-            r.addFighter(kid);
-            r.addFighter(torres);
-            r.addFighter(baro);
-
-            r.initializeRoster();
-
-            ShootoCard pc1 = new ShootoCard(r);
-
-            /*
-                        String fighter1 = "N/A";
-                        setLabels(pc1, fighter1);
-
-                        String fighter2 = "N/A";
-                        setLabels(pc1, fighter2);
-
-                        String fighter3 = "N/A";
-                        setLabels(pc1, fighter3);
-
-                        String fighter4 = "N/A";
-                        setLabels(pc1, fighter4);
-
-                        String fighter5 = "N/A";
-                        setLabels(pc1, fighter5);
-
-                        String fighter6 = "N/A";
-                        setLabels(pc1, fighter6);
-
-                        String fighter7 = "N/A";
-                        setLabels(pc1, fighter7);
-
-                        String fighter8 = "N/A";
-                        setLabels(pc1, fighter8);
-
-                        String fighter9 = "N/A";
-                        setLabels(pc1, fighter9);
-
-                        String fighter10 = "N/A";
-                        setLabels(pc1, fighter10);
-
-
-                        */
-
-                        String fighter1 = pc1.getFight1().getFighter1().getName();
-                        String fighter2 = pc1.getFight1().getFighter2().getName();
-
-                        String fighter3 = pc1.getFight2().getFighter1().getName();
-                        String fighter4 = pc1.getFight2().getFighter2().getName();
-
-                        String fighter5 = pc1.getFight3().getFighter1().getName();
-                        String fighter6 = pc1.getFight3().getFighter2().getName();
-
-                        String fighter7 = pc1.getFight4().getFighter1().getName();
-                        String fighter8 = pc1.getFight4().getFighter2().getName();
-
-                        String fighter9 = pc1.getFight5().getFighter1().getName();
-                        String fighter10 = pc1.getFight5().getFighter2().getName();
-
-
-            fighterName1.Text = fighter1;
-            fighterName2.Text = fighter2;
-            fighterName3.Text = fighter3;
-            fighterName4.Text = fighter4;
-            FighterName5.Text = fighter5;
-            fighterName6.Text = fighter6;
-            fighterName7.Text = fighter7;
-            fighterName8.Text = fighter8;
-            fighterName9.Text = fighter9;
-            fighterName10.Text = fighter10;
-
-
-            fight1weightlabel.Text = pc1.getFight1().getStringWeightClass();
-            fight2weightlabel.Text = pc1.getFight2().getStringWeightClass();
-            fight3weightlabel.Text = pc1.getFight3().getStringWeightClass();
-            fight4weightlabel.Text = pc1.getFight4().getStringWeightClass();
-            fight5weightlabel.Text = pc1.getFight5().getStringWeightClass();
-        }
-
-        public void setLabels(ShootoCard c, string fighter)
-        {
-            String name = c.getFight1().getFighter1().getName();
-
-
-            if (name.Equals(null) == false)
-            {
-                fighter = c.getFight1().getFighter1().getName();
-            }
-            else
-            {
-                fighter = "N/A";
-
-            }
 
         }
 
@@ -323,6 +298,18 @@ namespace FightCardGenerator
                 errorLabel.Text = "To Be Added";
                 }
 
+        }
+
+        private void dataSelectButton_Click(object sender, EventArgs e)
+        {
+            // Show the Open File dialog. If the user clicks OK, load the
+            // file that the user chose.
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                dataLocation = openFileDialog1.FileName;
+
+                dataLocationLabel.Text = dataLocation;
+            }
         }
     }
 }

@@ -52,37 +52,53 @@ namespace FightCardGenerator
                 isHeavy = true;
             }
 
-            if (upperWeight < 206 && upperWeight > 185 || lowerWeight < 206 && (lowerWeight > 185 || upperWeight > 185))
+
+            if (isWeight(206, 185))
             {
                 isLightHeavy = true;
             }
 
-            if (upperWeight < 186 && upperWeight > 170 || lowerWeight < 186 && (lowerWeight > 170 || upperWeight > 170))
+            if (isWeight(186, 170))
             {
                 isMiddle = true;
             }
 
-            if (upperWeight < 171 && upperWeight > 155 || lowerWeight < 171 && (lowerWeight > 155 || upperWeight > 155))
+            if (isWeight(171, 155))
             {
                 isWelter = true;
             }
 
-            if (upperWeight < 156 && upperWeight > 145 || lowerWeight < 156 && (lowerWeight > 145 || upperWeight > 145))
+            if (isWeight(156, 145))
             {
                 isLight = true;
             }
 
-            if (upperWeight < 146 && upperWeight > 135 || lowerWeight < 146 && (lowerWeight > 135 || upperWeight > 135))
+            if (isWeight(146, 135))
             {
                 isFeather = true;
             }
 
-            if (upperWeight < 136 && upperWeight > 125 || lowerWeight < 136 && (lowerWeight > 125 || upperWeight > 125))
+            if (isWeight(136, 125))
             {
                 isBantam = true;
             }
+        }
+
+
+
+        public Boolean isWeight(int up, int low)
+        {
+            if ((lowerWeight < up || upperWeight < up) && (lowerWeight > low || upperWeight > low))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
+
 
 
         public Boolean getIsBantam()

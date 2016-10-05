@@ -20,11 +20,34 @@ namespace FightCardGenerator
 
         public void setFight(List<Fighter> f, Fight f1)
         {
-            if (f.Count > 0)
+            List<Fighter> toRemove = new List<Fighter>();
+
+            foreach (Fighter fi in f)
+            {
+                if ( bookedFighters.Contains(fi))
+                {
+                    toRemove.Add(fi);
+                }
+            }
+
+
+            foreach (Fighter fi in toRemove)
+            {
+                if (bookedFighters.Contains(fi))
+                {
+                    f.Remove(fi);
+                }
+            }
+
+
+
+
+            if (f.Count > 1)
             {
 
                 int rando = rnd.Next(f.Count);
                 Fighter g = f.ElementAt(rando);
+
 
                 while (bookedFighters.Contains(g))
                 {
