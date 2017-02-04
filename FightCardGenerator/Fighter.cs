@@ -8,6 +8,7 @@ namespace FightCardGenerator
 {
    public class Fighter
     {
+        // creates  name, weight extremes and weightclass booleans
         String name;
         int upperWeight;
         int lowerWeight;
@@ -20,7 +21,7 @@ namespace FightCardGenerator
         Boolean isHeavy = false;
 
 
-        //Fighter constructor
+        //Fighter constructor that set values and calculates weight classes
         public Fighter(String FighterName, int upWeight, int lowWeight)
         {
             name =  FighterName;
@@ -29,6 +30,7 @@ namespace FightCardGenerator
             calcWeightClasses();
         }
 
+        // name getters
 
         public String getName()
         {
@@ -45,39 +47,34 @@ namespace FightCardGenerator
             return lowerWeight;
         }
 
+        //sets weight class boolenas base on weight extremes
+        //USE SWITCH HERE ?
         public void calcWeightClasses()
         {
             if (upperWeight > 205 || lowerWeight > 205)
             {
                 isHeavy = true;
             }
-
-
             if (isWeight(206, 185))
             {
                 isLightHeavy = true;
             }
-
             if (isWeight(186, 170))
             {
                 isMiddle = true;
             }
-
             if (isWeight(171, 155))
             {
                 isWelter = true;
             }
-
             if (isWeight(156, 145))
             {
                 isLight = true;
             }
-
             if (isWeight(146, 135))
             {
                 isFeather = true;
             }
-
             if (isWeight(136, 125))
             {
                 isBantam = true;
@@ -85,7 +82,7 @@ namespace FightCardGenerator
         }
 
 
-
+        // takes in weight class boundarys and check if a fighter weight range contain a point within the given boundarys
         public Boolean isWeight(int up, int low)
         {
             if ((lowerWeight < up || upperWeight < up) && (lowerWeight > low || upperWeight > low))
@@ -99,7 +96,7 @@ namespace FightCardGenerator
 
         }
 
-
+        // weight clas getters
 
         public Boolean getIsBantam()
         {
@@ -136,6 +133,8 @@ namespace FightCardGenerator
             return isHeavy;
         }
 
+
+        //return a string list of a fighter weight classes
         public String getWeightClasses()
         {
             String listOfWeights = "";

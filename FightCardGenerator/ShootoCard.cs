@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
+    // inherits from card class
   public class ShootoCard : Card
     {
+        // creates a roster, a random variable and 5 empty fights
+        // also an int list that is used to hold which weight classes have been used in fights
         Roster cardRoster;
         static Random rnd = new Random();
         List<int> bookedWeights = new List<int>();
@@ -19,17 +22,22 @@ namespace FightCardGenerator
         Fight fight4 = new Fight();
         Fight fight5 = new Fight();
 
+        //constructor tskes in a roster and sets up 5 fights are random but different weights
         public ShootoCard(Roster r) : base(r)
         {
+
             cardRoster = r;
+
+            // randomly picks a weight and adds it to the booked weights list
+            // does this 7 times so all weights are ordered
 
             int i = 0;
 
             while (i < 7)
             {
-
                 int rando = rnd.Next(7);
 
+                // keep picking a random weight until one that has not been booked before is found and adds it to booked weights
                 while (bookedWeights.Contains(rando))
                 {
                     rando = rnd.Next(7);
@@ -39,6 +47,8 @@ namespace FightCardGenerator
                 i++;
             }
 
+            // sets up all 5 fights
+            // fights are made based on the weight class order of booked weights
             setupFight(fight1, bookedWeights[0]);
             setupFight(fight2, bookedWeights[1]);
             setupFight(fight3, bookedWeights[2]);
@@ -46,6 +56,9 @@ namespace FightCardGenerator
             setupFight(fight5, bookedWeights[4]);
         }
 
+        //takes a fight and weight class int, creates a fight at the given weight
+        // USE SWITCH
+        // PULL OUT REPEATING CODE, IN PRIDE ASWELL MOVE TO CARD CLASS?
         public void setupFight(Fight f, int weight)
         {
             if(weight == 0)
@@ -92,12 +105,13 @@ namespace FightCardGenerator
             }
         }
 
+        // fight getters
+        // MABY MOVE TO CARD CLASS
 
         public Fight getFight1()
         {
             return fight1;
         }
-
         public Fight getFight2()
         {
             return fight2;

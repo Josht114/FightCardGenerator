@@ -8,6 +8,8 @@ namespace FightCardGenerator
 {
    public class Roster
     {
+        // creates a list of fighter for each weight class
+
         List<Fighter> allFighters = new List<Fighter>();
         List<Fighter> heavyweights = new List<Fighter>();
         List<Fighter> lightheavyweights = new List<Fighter>();
@@ -18,11 +20,14 @@ namespace FightCardGenerator
         List<Fighter> bantamweights = new List<Fighter>();
 
 
+        // adds a fighter to the list of all fighters
         public void addFighter(Fighter f)
         {
             allFighters.Add(f);
         }
 
+        //for each fighter in the all fighter list
+        // check their weight and add them to the correct weight lass lists
         public void initializeRoster()
         {
             foreach (Fighter f in allFighters)
@@ -65,6 +70,8 @@ namespace FightCardGenerator
 
         }
 
+        // getters for each weight class list
+
         public List<Fighter> getBantamweights()
         {
             return bantamweights;
@@ -101,6 +108,8 @@ namespace FightCardGenerator
         }
 
 
+        // returns a string list of all fighters
+
         public String stringAllFighters()
         {
             String allNames = "";
@@ -114,13 +123,13 @@ namespace FightCardGenerator
 
         }
 
+        // string representation of all fighter in a given weight class
 
-
-        public String stringAllLightweights()
+        public String stringAllIntWeight(List<Fighter> l)
         {
             String allNames = "";
 
-            foreach (Fighter f in lightweights)
+            foreach (Fighter f in l)
             {
                 allNames = allNames + " " + f.getName() + " ";
             }
@@ -128,21 +137,6 @@ namespace FightCardGenerator
             return allNames;
 
         }
-
-
-        public String stringAllFeatherweights()
-        {
-            String allNames = "";
-
-            foreach (Fighter f in featherweights)
-            {
-                allNames = allNames + " " + f.getName() + " ";
-            }
-
-            return allNames;
-
-        }
-
 
 
     }

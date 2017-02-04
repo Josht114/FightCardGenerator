@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace FightCardGenerator
 {
+    // inherits from car class
     public class PrideCard : Card
     {
+        // creates a roster, a random variable and 5 empty fights
         Roster cardRoster;
         static Random rnd = new Random();
 
@@ -20,6 +22,8 @@ namespace FightCardGenerator
         Fight fight5 = new Fight();
 
 
+        // constructor takes in a roster and sets 5 fights, 1 for each weight class and 2 at a random weight
+        // also gives each fight its weight class
         public PrideCard(Roster r) : base(r)
         {
             cardRoster = r;
@@ -39,9 +43,16 @@ namespace FightCardGenerator
             setFight(cardRoster.getLightweights(), fight4);
             fight4.setweight(155);
 
-            int rando = rnd.Next(4);
 
-            File.AppendAllText("D:\\log.txt", rando.ToString());
+
+            // log to debug text file
+            //       File.AppendAllText("D:\\log.txt", rando.ToString());
+
+            //5th random weight class is set by creating a random between 0-4
+            // each number coresponds to a different weight class to set the fight to
+            // ADD CHECK THAT IF CAN'T MAKE FIGHT IN THAT CLASS PICK ANOTHER
+
+            int rando = rnd.Next(4);
 
             if (rando == 0)
             {
@@ -71,6 +82,7 @@ namespace FightCardGenerator
 
         }
 
+        // getters for all 5 fights
 
         public Fight getFight1()
         {
