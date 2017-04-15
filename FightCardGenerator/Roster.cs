@@ -108,6 +108,12 @@ namespace FightCardGenerator
         }
 
 
+        public List<Fighter> getAllFighters()
+        {
+            return allFighters;
+        }
+
+
         // returns a string list of all fighters
 
         public String stringAllFighters()

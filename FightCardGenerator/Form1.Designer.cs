@@ -60,12 +60,10 @@
             // 
             // fighterName1
             // 
-            this.fighterName1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fighterName1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fighterName1.Location = new System.Drawing.Point(106, 283);
+            this.fighterName1.Location = new System.Drawing.Point(338, 283);
             this.fighterName1.Name = "fighterName1";
-            this.fighterName1.Size = new System.Drawing.Size(503, 34);
+            this.fighterName1.Size = new System.Drawing.Size(271, 34);
             this.fighterName1.TabIndex = 0;
             this.fighterName1.Text = "Fighter 1";
             this.fighterName1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -82,12 +80,10 @@
             // 
             // fighterName3
             // 
-            this.fighterName3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fighterName3.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fighterName3.Location = new System.Drawing.Point(112, 346);
+            this.fighterName3.Location = new System.Drawing.Point(344, 346);
             this.fighterName3.Name = "fighterName3";
-            this.fighterName3.Size = new System.Drawing.Size(497, 52);
+            this.fighterName3.Size = new System.Drawing.Size(265, 52);
             this.fighterName3.TabIndex = 2;
             this.fighterName3.Text = "Fighter 3";
             this.fighterName3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,12 +100,10 @@
             // 
             // FighterName5
             // 
-            this.FighterName5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.FighterName5.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FighterName5.Location = new System.Drawing.Point(112, 448);
+            this.FighterName5.Location = new System.Drawing.Point(344, 448);
             this.FighterName5.Name = "FighterName5";
-            this.FighterName5.Size = new System.Drawing.Size(497, 34);
+            this.FighterName5.Size = new System.Drawing.Size(265, 34);
             this.FighterName5.TabIndex = 4;
             this.FighterName5.Text = "Fighter 5";
             this.FighterName5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,12 +120,10 @@
             // 
             // fighterName7
             // 
-            this.fighterName7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fighterName7.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fighterName7.Location = new System.Drawing.Point(112, 532);
+            this.fighterName7.Location = new System.Drawing.Point(344, 532);
             this.fighterName7.Name = "fighterName7";
-            this.fighterName7.Size = new System.Drawing.Size(497, 34);
+            this.fighterName7.Size = new System.Drawing.Size(265, 34);
             this.fighterName7.TabIndex = 6;
             this.fighterName7.Text = "Fighter 7";
             this.fighterName7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,12 +140,10 @@
             // 
             // fighterName9
             // 
-            this.fighterName9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fighterName9.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fighterName9.Location = new System.Drawing.Point(112, 621);
+            this.fighterName9.Location = new System.Drawing.Point(350, 621);
             this.fighterName9.Name = "fighterName9";
-            this.fighterName9.Size = new System.Drawing.Size(497, 34);
+            this.fighterName9.Size = new System.Drawing.Size(259, 34);
             this.fighterName9.TabIndex = 8;
             this.fighterName9.Text = "Fighter 9";
             this.fighterName9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
