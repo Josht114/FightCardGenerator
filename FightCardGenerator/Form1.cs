@@ -26,12 +26,30 @@ namespace FightCardGenerator
         }
 
 
-        public void generatePrideCard()
+        public void setupRoster()
         {
             Roster r = new Roster();
 
+            DataReader d = new DataReader(dataLocation);
 
+            List<String> data = new List<String>();
 
+            data = d.getDataList();
+
+            List<Fighter> fighterz = new List<Fighter>();
+            fighterz = createFighters(data);
+
+            foreach (Fighter f in fighterz)
+            {
+                r.addFighter(f);
+            }
+
+            r.initializeRoster();
+        }
+
+        public void generatePrideCard()
+        {
+            Roster r = new Roster();
 
             DataReader d = new DataReader(dataLocation);
 
@@ -66,8 +84,6 @@ namespace FightCardGenerator
         public void generateShootoCard()
         {
             Roster r = new Roster();
-
-
 
             DataReader d = new DataReader(dataLocation);
 

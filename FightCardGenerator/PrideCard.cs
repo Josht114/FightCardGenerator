@@ -5,24 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// PRIDECARD HAVE NO MIDDLEWEIGHT OR FEATHERWEIGHT AND BELOW
+// HAS ONE FIGHT OF IN EACH WEIGHT PLUS 1 RANDOM WEIGHT FIGHT
+
 namespace FightCardGenerator
 {
     // inherits from car class
     public class PrideCard : Card
     {
         // creates a roster, a random variable and 5 empty fights
-        Roster cardRoster;
-        static Random rnd = new Random();
 
 
-        Fight fight1 = new Fight();
-        Fight fight2 = new Fight();
-        Fight fight3 = new Fight();
-        Fight fight4 = new Fight();
-        Fight fight5 = new Fight();
 
-
-        // constructor takes in a roster and sets 5 fights, 1 for each weight class and 2 at a random weight
+        // constructor takes in a roster and sets 5 fights, 1 for each weight 
+        // class and 1 at a random weight
         // also gives each fight its weight class
         public PrideCard(Roster r) : base(r)
         {
@@ -81,31 +78,6 @@ namespace FightCardGenerator
 
 
         }
-
-        // getters for all 5 fights
-
-        public Fight getFight1()
-        {
-            return fight1;
-        }
-
-        public Fight getFight2()
-        {
-            return fight2;
-        }
-        public Fight getFight3()
-        {
-            return fight3;
-        }
-        public Fight getFight4()
-        {
-            return fight4;
-        }
-        public Fight getFight5()
-        {
-            return fight5;
-        }
-
 
     }
 }
