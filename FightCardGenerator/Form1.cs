@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace FightCardGenerator
 {
+    //
     public partial class Form1 : Form
     {
         String dataLocation = @"D:\#STORAGE\coding\fighterData2.csv";
