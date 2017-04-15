@@ -5,24 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// SHOOTO CARDS HAVE ALL WEIGHT CLASSES
+// HAS 5 FIGHT IN RANDOM BUT DIFFERENT WEIGHT CLASSES
+
 namespace FightCardGenerator
 {
     // inherits from card class
   public class ShootoCard : Card
     {
         // creates a roster, a random variable and 5 empty fights
-        // also an int list that is used to hold which weight classes have been used in fights
-        Roster cardRoster;
-        static Random rnd = new Random();
-        List<int> bookedWeights = new List<int>();
+        // also an int list that is used to hold which weight classes have
+        //been used in fight
 
-        Fight fight1 = new Fight();
-        Fight fight2 = new Fight();
-        Fight fight3 = new Fight();
-        Fight fight4 = new Fight();
-        Fight fight5 = new Fight();
 
-        //constructor tskes in a roster and sets up 5 fights are random but different weights
+        //constructor tskes in a roster and sets up 5 fights are random but
+        //different weights
         public ShootoCard(Roster r) : base(r)
         {
 
@@ -105,29 +103,8 @@ namespace FightCardGenerator
             }
         }
 
-        // fight getters
-        // MABY MOVE TO CARD CLASS
 
-        public Fight getFight1()
-        {
-            return fight1;
-        }
-        public Fight getFight2()
-        {
-            return fight2;
-        }
-        public Fight getFight3()
-        {
-            return fight3;
-        }
-        public Fight getFight4()
-        {
-            return fight4;
-        }
-        public Fight getFight5()
-        {
-            return fight5;
-        }
+
 
     }
 }

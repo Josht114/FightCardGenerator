@@ -12,10 +12,17 @@ namespace FightCardGenerator
 
         // creates a roster, and random variable  and a list of fighter who had been booken on the card already
 
-        Roster cardRoster;
-        Random rnd = new Random();
+     public   Roster cardRoster;
+     public   Random rnd = new Random();
 
-        List<Fighter> bookedFighters = new List<Fighter>();
+     public   List<Fighter> bookedFighters = new List<Fighter>();
+      public  List<int> bookedWeights = new List<int>();
+
+        public Fight fight1 = new Fight();
+        public Fight fight2 = new Fight();
+        public Fight fight3 = new Fight();
+        public Fight fight4 = new Fight();
+        public Fight fight5 = new Fight();
 
         //constructor that take a roster
         public Card(Roster r)
@@ -94,6 +101,28 @@ namespace FightCardGenerator
 
             }
         }
+
+        public Fight getFight1()
+        {
+            return fight1;
+        }
+        public Fight getFight2()
+        {
+            return fight2;
+        }
+        public Fight getFight3()
+        {
+            return fight3;
+        }
+        public Fight getFight4()
+        {
+            return fight4;
+        }
+        public Fight getFight5()
+        {
+            return fight5;
+        }
+
 
     }
 
